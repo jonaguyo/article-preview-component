@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap');
+
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+$radius: 10px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope';
+    font-size: 13px;
+    color: $very-dark-grayish-blue;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $light-grayish-blue;
+
+    .attribution {
+        margin-top: 50px;
+        font-size: 11px;
+        text-align: center;
+
+        a {
+            color: hsl(228, 45%, 44%);
+        }
+    }
+
+    .content {
+        max-width: 800px;
+        height: 300px;
+        display: flex;
+        border-radius: $radius;
+        background-color: white;
+        box-shadow: 0px 10px 50px -10px rgba(black, 0.1);
+
+        .drawer {
+            width: 40%;
+            border-radius: $radius 0px 0px $radius;
+            overflow: hidden;
+
+            img {
+                height: 100%;
+                filter: brightness(113%);
+            }
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 60%;
+            padding: 45px;
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p {
+                font-weight: 300;
+            }
+
+            .account {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+
+                .avatar {
+                    height: 40px;
+                    margin-right: 15px;
+                    border-radius: 50%;
+                }
+
+                .name {
+                    font-weight: 700;
+                }
+
+                .date {
+                    color: $grayish-blue;
+                }
+
+                .share-button {
+                    position: relative;
+                    align-self: right;
+                    width: 32px;
+                    height: 32px;
+                    margin-left: auto;
+                    border-radius: 50%;
+                    border-color: transparent;
+                    text-align: center;
+
+                    #icon-share {
+                        fill: $desaturated-dark-blue;
+                    }
+
+                    .share {
+                        display: flex;
+                        justify-content: space-around;
+                        position: absolute;
+                        width: 200px;
+                        transform: translate(0, -200%);
+                        padding: 15px;
+                        background-color: $desaturated-dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}

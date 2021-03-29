@@ -112,20 +112,41 @@ body .content .description .account .date {
   color: #9eafc2;
 }
 
+body .content .description .account input {
+  display: none;
+}
+
+body .content .description .account input:checked ~ label > .share-button {
+  background-color: #6d7f97;
+}
+
+body .content .description .account input:checked ~ label > .share-button #icon-share {
+  fill: #ecf2f8;
+}
+
+body .content .description .account input:checked ~ label > .share-button .share {
+  display: block;
+}
+
+body .content .description .account label {
+  margin-left: auto;
+}
+
 body .content .description .account .share-button {
   position: relative;
-  -ms-flex-item-align: right;
-      -ms-grid-row-align: right;
-      align-self: right;
   width: 32px;
   height: 32px;
-  margin-left: auto;
   border-radius: 50%;
   border-color: transparent;
   text-align: center;
+  background-color: #ecf2f8;
 }
 
 body .content .description .account .share-button #icon-share {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
   fill: #6d7f97;
 }
 
@@ -149,10 +170,11 @@ body .content .description .account .share-button .share-content {
 }
 
 body .content .description .account .share-button .share {
+  display: none;
   position: absolute;
   left: 50%;
-  -webkit-transform: translate(-50%, -180%);
-          transform: translate(-50%, -180%);
+  -webkit-transform: translate(-50%, -150%);
+          transform: translate(-50%, -150%);
   -webkit-box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5);
 }
@@ -164,5 +186,48 @@ body .content .description .account .share-button .share::after {
           transform: translate(-50%, 0);
   border: 12px solid #48556a;
   border-color: #48556a transparent transparent transparent;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body .content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 375px;
+    height: auto;
+    margin: 50px 30px 0px 30px;
+  }
+  body .content .drawer {
+    width: auto;
+    height: 228px;
+    border-radius: 10px 10px 0px 0px;
+  }
+  body .content .drawer img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: top;
+       object-position: top;
+    width: 100%;
+    height: 100%;
+  }
+  body .content .description {
+    width: 100%;
+    padding: 25px;
+  }
+  body .content .description h1 {
+    margin-bottom: 20px;
+  }
+  body .content .description p {
+    margin-bottom: 20px;
+  }
+  body .content .description .account p {
+    margin: auto;
+  }
 }
 /*# sourceMappingURL=global.css.map */

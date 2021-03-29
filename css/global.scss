@@ -89,17 +89,39 @@ body {
                     color: $grayish-blue;
                 }
 
+                input {
+                    display: none;
+                }
+
+                input:checked ~ label > .share-button {
+                    background-color: $desaturated-dark-blue;
+
+                    #icon-share {
+                        fill: $light-grayish-blue;
+                    }
+
+                    .share {
+                        display: block;
+                    }
+                }
+
+                label {
+                    margin-left: auto;
+                }
+
                 .share-button {
                     position: relative;
-                    align-self: right;
                     width: 32px;
                     height: 32px;
-                    margin-left: auto;
                     border-radius: 50%;
                     border-color: transparent;
                     text-align: center;
+                    background-color: $light-grayish-blue;
 
                     #icon-share {
+                        position: absolute;
+                        left: 50%;
+                        transform: translate(-50%, 50%);
                         fill: $desaturated-dark-blue;
                     }
 
@@ -118,9 +140,10 @@ body {
                     }
 
                     .share {
+                        display: none;
                         position: absolute;
                         left: 50%;
-                        transform: translate(-50%, -180%);
+                        transform: translate(-50%, -150%);
                         box-shadow: 0px 10px 20px -10px rgba(black, 0.5);
                     }
 
@@ -130,6 +153,51 @@ body {
                         transform: translate(-50%, 0);
                         border: 12px solid $very-dark-grayish-blue;
                         border-color: $very-dark-grayish-blue transparent transparent transparent;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        justify-content: flex-start;
+
+        .content {
+            flex-direction: column;
+            width: 375px;
+            height: auto;
+            margin: 50px 30px 0px 30px;
+
+            .drawer {
+                width: auto;
+                height: 228px;
+                border-radius: $radius $radius 0px 0px;
+                
+                img {
+                    object-fit: cover;
+                    object-position: top;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .description {
+                width: 100%;
+                padding: 25px;
+
+                h1 {
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    margin-bottom: 20px;
+                }
+
+                .account {
+                    p {
+                        margin: auto;
                     }
                 }
             }
